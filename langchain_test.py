@@ -1,9 +1,14 @@
-
-
 import os
 
-os.environ["OPENAI_API_KEY"] = "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"
+# get parent dir
+path_of_this_file = os.path.dirname(os.path.realpath(__file__))
+os.chdir(os.path.join(path_of_this_file, os.pardir))
 
+# get my api key from text file
+with open("openai_api_key.txt") as f:
+    data = f.read()
+
+os.environ["OPENAI_API_KEY"] = data
 
 if False:
     # pip install --upgrade --quiet langchain-core langchain-community langchain-openai
