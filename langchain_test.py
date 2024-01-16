@@ -10,7 +10,7 @@ with open("openai_api_key.txt") as f:
 
 os.environ["OPENAI_API_KEY"] = data
 
-if False:
+if True:
     # pip install --upgrade --quiet langchain-core langchain-community langchain-openai
     from langchain_core.output_parsers import StrOutputParser
     from langchain_core.prompts import ChatPromptTemplate
@@ -24,7 +24,7 @@ if False:
 
     print(chain.invoke({"topic": "ice cream"}))
 
-if True:
+if False:
     # pip install langchain docarray tiktoken
     # pip install pydantic==1.10.13
     from langchain_community.vectorstores import DocArrayInMemorySearch
